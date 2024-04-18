@@ -1,0 +1,38 @@
+// "fs" or "file system" module in Node.js
+
+const fs = require("fs");
+
+fs.writeFile("sample.txt","hello welcome to the node.js world",(err,data)=>{
+    if(err) {
+        throw err;
+    }
+    console.log("file created sucessfully");
+})
+
+fs.readFile("sample.txt",(err,data)=>{
+    if(err) {
+        throw err;
+    }
+    console.log(data.toString());
+})
+
+fs.appendFile("sample.txt","this is my updated content",(err)=>{
+    if(err) {
+        throw err;
+    }
+    console.log("file updated sucessfully");
+})
+
+fs.rename("sample.txt","test.txt",(err)=>{
+    if(err) {
+        throw err;
+    }
+    console.log("file name has been changed");
+})
+
+fs.unlink("test.txt",(err)=>{
+    if(err) {
+        throw err;
+    }
+    console.log("file deleted sucessfully");
+})
